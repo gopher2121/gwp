@@ -1,0 +1,42 @@
+web application : 
+html to the client using http 
+
+
+Http:stateless , text based , req resp protocol that uses client server computing model
+
+subsequent requests has no clue of the former
+plain text so that you don't need protocol analyser 
+clien is the user agent 
+
+
+http0.9 1990 http1.0 1996 http1.1 1999  http2.0
+
+request line
+request headers
+blank line
+message body(optional)
+
+get - i need the resource
+head - i need the resource with the response headers , however I fucking don't care of the message body , please don't carry the weight of the message body over the network
+post - pass the data to the resource identified by the URI
+put - that should be the resource at the location identified by the URI. if alreadyExist, replace it , else create a new resource
+delete- delete the requested resource
+options- tell me what are the methods do you support
+trace- send me the request , so that i can know what the server did to the request 
+connect- ssl https tunneling
+patch - modifies the resouce 
+
+get/head/options/trace are the safe methods as it doesn't change the 
+state of the server
+
+idempotent request  methods: 
+a method is called idempotent if the state of the server doesn't 
+change the second time with the same data
+
+post is neither safe nor idempotent
+
+html only supports get and post ... 
+so how does you use other http methods
+
+through browser apis called XMLHttpRequest 
+
